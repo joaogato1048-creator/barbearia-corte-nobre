@@ -90,6 +90,18 @@ nav ul li a {
 }
 
 
+#hero {
+  position: relative;        /* necessário para o ::before funcionar */
+  background-image: url('img/hero-bg.jpg');
+  background-size: cover;     /* a imagem cobre toda a seção */
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+  overflow: hidden;
+}
+
+
+
 /* ===========================
    TELA INICIAL (HERO)
    reorganização parte por parte
