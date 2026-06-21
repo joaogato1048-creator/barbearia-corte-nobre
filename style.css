@@ -1,0 +1,270 @@
+/* PALETA DE CORES - Barbearia Corte Nobre
+================================
+  Fundo principal:    #111111  (preto)
+  Fundo secundário:   #1a1a1a  (preto suave)
+  Destaque:           #c9a84c  (dourado)
+  Texto principal:    #ffffff  (branco)
+  Texto secundário:   #aaaaaa  (cinza claro)
+  Borda/detalhe:      #c9a84c  (dourado)
+================================ */
+
+
+/* ===========================
+   RESET GERAL
+   Remove espaços padrão que o navegador aplica em todos os elementos
+=========================== */
+* {
+  margin: 0;        /* remove espaço externo */
+  padding: 0;       /* remove espaço interno */
+  box-sizing: border-box; /* o tamanho do elemento inclui borda e padding */
+}
+
+
+/* ===========================
+   CORPO DA PÁGINA
+=========================== */
+body {
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  background: linear-gradient(180deg, #000000 70%, #8c6e1d 100%);
+  min-height: 100vh; /* garante que o degradê ocupa a tela toda */
+}
+
+
+/* ===========================
+   HEADER - barra do topo
+=========================== */
+header {
+  background-color: #1a1a1a;      /* fundo preto suave, diferente do body */
+  padding: 20px;                  /* espaço interno de 20px em volta */
+  border-bottom: 2px solid #c9a84c; /* linha dourada embaixo do header */
+}
+
+
+/* ===========================
+   MENU HAMBURGUER
+   Ícone ☰ que mostra o menu dropdown ao passar o mouse
+=========================== */
+.menu-dropdown {
+  display: none;       /* esconde o menu por padrão */
+  position: absolute;  /* flutua sobre a página */
+  top: 45px;           /* distância abaixo do ícone */
+  left: 0;
+  background-color: #1a1a1a;
+  border: 1px solid #c9a84c;
+  border-radius: 8px;
+  padding: 10px 0;
+  z-index: 999;        /* fica acima de tudo */
+}
+
+.menu-hamburguer:hover .menu-dropdown {
+  display: block;      /* mostra o menu ao passar o mouse */
+}
+
+.menu-dropdown ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;  /* itens empilhados verticalmente */
+  gap: 0;
+}
+
+
+/* ===========================
+   MENU DE NAVEGAÇÃO
+=========================== */
+nav ul {
+  list-style: none;       /* remove os pontinhos da lista */
+  display: flex;          /* coloca os itens lado a lado */
+  gap: 30px;              /* espaço de 30px entre cada item */
+  justify-content: center; /* centraliza o menu na tela */
+}
+
+
+/* ===========================
+   LINKS DO MENU
+=========================== */
+nav ul li a {
+  color: #c9a84c;         /* cor dourada nos links */
+  text-decoration: none;  /* remove o sublinhado dos links */
+  font-size: 16px;        /* tamanho da fonte */
+}
+
+
+/* ===========================
+   TELA INICIAL (HERO)
+   reorganização parte por parte
+=========================== */
+
+/* título principal */
+h1 {
+  text-align: center;
+  font-size: 42px;
+  color: #c9a84c;
+  padding: 20px 0;
+}
+
+/* parágrafo */
+p {
+  text-align: center;
+  font-size: 16px;
+  color: #aaaaaa;
+  padding: 10px 0;
+}
+
+/* botão agende agora */
+#hero a {
+  display: block;       /* ocupa a linha inteira */
+  text-align: center;
+  font-size: 18px;
+  color: #c9a84c;
+  padding: 100px 0;       /* espaço grande dentro do link, separa visualmente do texto acima */
+  text-decoration: none;
+  margin-top: 200px;     /* espaço acima do botão, cria a "respiração" entre hero e a seção seguinte */
+}
+
+
+/* ===========================
+   SEÇÃO DE BARBEIROS
+=========================== */
+#barbeiros h2 {
+    text-align: center;
+    color: #c9a84c;
+    margin-bottom: 40px;
+}
+
+/* fileira com as fotos dos barbeiros */
+.lista-barbeiros {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;        /* quebra para a linha de baixo em telas menores */
+}
+
+.barbeiro {
+    text-align: center;
+}
+
+.barbeiro img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;      /* corta a imagem mantendo proporção, sem distorcer */
+    border-radius: 10px;
+}
+
+
+/* ===========================
+   SEÇÃO DE HORÁRIOS
+   agora vamos organizar o horário de atendimento
+=========================== */
+
+/* Organiza barbeiros e horários lado a lado */
+#info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;  /* alinha os dois blocos pelo topo */
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+}
+
+/* Caixa dos horários */
+#horarios {
+    background-color: #1a1a1a;
+    border: 2px solid #c9a84c;
+    border-radius: 15px;   /* bordas arredondadas */
+    padding: 20px 0px;
+    width: 100px 50px;     /* largura fixa para os horários */
+}
+
+/* Título dos horários */
+#horarios h2 {
+    color: #c9a84c;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+/* Cada linha de horário */
+#horarios p {
+    color: #ffffff;
+    font-size: 18px;
+    padding: 12px 0;
+    border-bottom: 1px solid #333;  /* linha sutil separando cada horário */
+}
+
+
+/* ===========================
+   SEÇÃO DE SERVIÇOS (VALORES)
+=========================== */
+#servicos {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+#servicos h2 {
+  color: #c9a84c;
+  margin-bottom: 30px;
+}
+
+.card {
+  display: inline-block;   /* cards lado a lado, na mesma linha */
+  background-color: #1a1a1a;
+  border: 1px solid #c9a84c;
+  border-radius: 10px;
+  padding: 20px 30px;
+  margin: 10px;
+  min-width: 180px;
+}
+
+
+/* ===========================
+   SEÇÃO DE AGENDAMENTO
+=========================== */
+#agendamento {
+  padding: 50px 20px;
+  max-width: 600px;
+  margin: 0 auto;  /* centraliza o formulário na página */
+}
+
+/* cada bloco do formulário (Dados Pessoais / Agendamento) */
+.grupo {
+  border: 1px solid #c9a84c;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 25px;  /* espaço entre os dois grupos */
+}
+
+.grupo h3 {
+  color: #c9a84c;
+  margin-bottom: 15px;
+}
+
+.grupo label {
+  display: block;        /* cada label ocupa a própria linha */
+  margin-top: 12px;
+  margin-bottom: 5px;
+}
+
+.grupo input,
+.grupo select {
+  width: 100%;            /* campo ocupa toda a largura do grupo */
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #c9a84c;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* botão de enviar o formulário */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #c9a84c;
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}

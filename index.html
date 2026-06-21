@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbearia Corte Nobre</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="menu-hamburguer">
+      <span>&#9776;</span> <!-- ícone ☰ -->
+      <nav class="menu-dropdown">
+        <ul>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#barbeiros">Barbeiros</a></li>
+          <li><a href="#agendamento">Agendamento</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 1. TELA INICIAL -->
+    <section id="hero">
+      <h1>Barbearia Corte Nobre</h1>
+      <p>O melhor corte para o seu estilo</p>
+      <a href="#agendamento">Agende agora</a>
+    </section>
+
+    <!-- 2. BARBEIROS + HORÁRIOS -->
+    <section id="info">
+
+      <div id="barbeiros">
+
+        <div class="lista-barbeiros">
+
+          <div class="barbeiro">
+            <img src="img/barbeiro1.jpg" alt="Barbeiro 1">
+            <h3>João</h3>
+          </div>
+
+          <div class="barbeiro">
+            <img src="img/barbeiro2.jpg" alt="Barbeiro 2">
+            <h3>Pedro</h3>
+          </div>
+
+          <div class="barbeiro">
+            <img src="img/barbeiro3.jpg" alt="Barbeiro 3">
+            <h3>Lucas</h3>
+          </div>
+
+        </div>
+
+      </div>
+    <div class="separador">
+      <center>
+        <div id="horarios">
+          <h2>Horários</h2>
+
+          <p>Segunda a Sexta: 9h às 20h</p>
+
+          <p>Sábado: 9h às 18h</p>
+
+          <p>Domingo: Fechado</p>
+        </div>
+      </center>
+    </div>
+    </section>
+</main>
+ <section>
+    <!-- 4. AGENDAMENTO -->
+    <section id="agendamento">
+
+        <div class="grupo">
+          <h3>Dados Pessoais</h3>
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="telefone" required>
+        </div>
+
+        <div class="grupo">
+          <h3>Agendamento</h3>
+          <label for="servico">Serviço:</label>
+          <select id="servico" name="servico" required>
+            <option value="">Selecione um serviço</option>
+            <option value="corte">Corte de Cabelo</option>
+            <option value="barba">Barba</option>
+            <option value="corte_barba">Corte + Barba</option>
+          </select>
+          <label for="barbeiro">Barbeiro:</label>
+          
+          <select id="barbeiro" name="barbeiro" required>
+          <option value="">Selecione um barbeiro</option>
+          <option value="joao">João</option>
+            <option value="pedro">Pedro</option>
+            <option value="lucas">Lucas</option>
+          </select>
+          <label for="data">Data e Horário:</label>
+          <input type="datetime-local" id="data" name="data" required>
+        </div>
+
+        <button type="submit">Agendar</button>
+
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Contato: (11) 1234-5678 | Email: contato@barbeariacortenobre.com.br</p>
+    <p>Siga-nos nas redes sociais:
+      <a href="https://www.facebook.com/barbeariacortenobre">Facebook</a> |
+      <a href="https://www.instagram.com/barbeariacortenobre">Instagram</a>
+    </p>
+  </footer>
+
+</body>
+
+</html>
