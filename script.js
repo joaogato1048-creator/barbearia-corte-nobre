@@ -1,39 +1,36 @@
-// 1. Pega o formulário pelo seletor
-const form = document.querySelector('form')
 
-// 2. Escuta o evento de envio do formulário
-form.addEventListener('submit', function (event) {
-  event.preventDefault() // impede o envio até passar nas validações
 
-  // 3. Pega os valores digitados
-  const nome = document.getElementById('nome').value.trim()
-  const email = document.getElementById('email').value.trim()
-  const telefone = document.getElementById('telefone').value.trim()
+function validarCPF(cpf) {
+    cpf = cpf.replace(/[^\d]+/g, '') // remove tudo que não for número
 
-  // 4. Expressões regulares (padrões) para validar formato
-  const regexNome = /^[A-Za-zÀ-ÿ\s]{3,}$/        // só letras e espaço, mínimo 3 caracteres
-  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/ // formato algo@algo.com
-  const regexTelefone = /^\(\d{2}\)\s?\d{4,5}-?\d{4}$/ // (11) 91234-5678
+    // CPF precisa ter 11 dígitos e não pode ser uma sequência repetida (111.111.111-11, etc)
+    if (cpf.length !== 11 || /^(\d)\1+$/.test(cpf)) return false
 
-  // 5. Validação do nome
-  if (!regexNome.test(nome)) {
-    alert('Digite um nome válido, com pelo menos 3 letras (sem números).')
-    return // para a execução, não envia o formulário
-  }
+    function validaCampos() {
 
-  // 6. Validação do email
-  if (!regexEmail.test(email)) {
-    alert('Digite um email válido. Exemplo: nome@email.com')
-    return
-  }
+        // pega os valores digitados pelo usuário
+        const nome = document.getElementById('nome').value.trim()
+        const email = document.getElementById('email').value.trim()
+        const telefone = document.getElementById('telefone').value.trim()
 
-  // 7. Validação do telefone
-  if (!regexTelefone.test(telefone)) {
-    alert('Digite um telefone válido. Exemplo: (11) 91234-5678')
-    return
-  }
+        // -------- NOME: maior que 2 e menor ou igual a 100 caracteres --------
+        if (nome.length <= 2 || nome.length > 100) {
+            alert('Nome inválido! Deve ter entre 3 e 100 caracteres.')
+            return false
+        }
 
-  // 8. Se passou em todas as validações
-  alert('Agendamento validado com sucesso!')
-  form.submit() // envia o formulário de verdade
-})
+        if (email.length <= 10 || email.length > 100) {
+            alert('E-mail inválido! Deve ter entre 11 e 100 caracteres.')
+            return false
+        }
+
+        // -------- TELEFONE: exatamente 11 caracteres --------
+        if (telefone.length !== 11) {
+            alert('Telefone inválido! Digite o DDD + número, somente dígitos (11 números).')
+            return false
+        }
+
+        // se passou em todas as validações, o formulário é enviado normalmente
+        return true
+    }
+}
