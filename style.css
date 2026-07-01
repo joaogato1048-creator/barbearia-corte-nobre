@@ -90,9 +90,9 @@ nav ul li a {
 }
 
 
-#hero {
+#ini{
   position: relative;        /* necessário para o ::before funcionar */
-  background-image: url('img/hero-bg.jpg');
+  background-image: url('img/ini-bg.jpg');
   background-size: cover;     /* a imagem cobre toda a seção */
   background-position: center;
   background-repeat: no-repeat;
@@ -103,7 +103,7 @@ nav ul li a {
 
 
 /* ===========================
-   TELA INICIAL (HERO)
+   TELA INICIAL (ini)
    reorganização parte por parte
 =========================== */
 
@@ -124,14 +124,14 @@ p {
 }
 
 /* botão agende agora */
-#hero a {
+#ini a {
   display: block;       /* ocupa a linha inteira */
   text-align: center;
   font-size: 18px;
   color: #c9a84c;
   padding: 100px 0;       /* espaço grande dentro do link, separa visualmente do texto acima */
   text-decoration: none;
-  margin-top: 200px;     /* espaço acima do botão, cria a "respiração" entre hero e a seção seguinte */
+  margin-top: 200px;     /* espaço acima do botão, cria a "respiração" entre inie a seção seguinte */
 }
 
 
